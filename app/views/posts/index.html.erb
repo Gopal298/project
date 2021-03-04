@@ -1,0 +1,9 @@
+
+<br/><button><%= link_to "Create New Post",new_post_path %></button><br/>
+
+<% @posts.each do |post| %>
+	<%= link_to post.name,post_path(post) %>
+	<button><%= link_to "Edit",edit_post_path(post) %></button>
+	<button><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></button><br/>
+
+<% end %>
